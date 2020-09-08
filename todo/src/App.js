@@ -9,11 +9,15 @@ import Form from './ToDoForm'
 
 
 export default function App(){
+
   return(
-    <div className='App'>
+    <>
+    <div>
       <header><h1>To Do List</h1></header>
       <Form/>
+      
     </div>
+    </>
   )
 }
 

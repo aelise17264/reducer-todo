@@ -1,11 +1,12 @@
 import React, {useState, useReducer} from 'react';
 import {connect} from 'react-redux';
 import {todoData, reducer} from './Components/ToDoReducer'
+import List from './ToDoList'
 
 const Form = () => {
     const [newItem, setNewItem] = useState('')
     const [state, dispatch] = useReducer(reducer, todoData)
-console.log(state)
+console.log(state[0].task)
 
 const handleChanges = event => {
     setNewItem(event.target.value)
@@ -41,6 +42,10 @@ const handleChanges = event => {
               </div> 
             )}
             </form>
+           
+      
+      <List
+      state={state}/>
         </div>
         </>
     )
