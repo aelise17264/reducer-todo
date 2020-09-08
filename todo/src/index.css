@@ -1,5 +1,5 @@
 body{
-  background: url(https://i.pinimg.com/originals/6a/a4/e4/6aa4e4f24c40d1db81a41b5e09cbe664.jpg);
+  background: url(https://s7d2.scene7.com/is/image/PetSmart/5269046);
 background-position: center;
 padding-left: 5%;
 font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -10,6 +10,8 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
 display: flex;
 flex-direction: column;
 align-items: center;
+color: #1a1a2e;
+font-weight: bold;
 
 }
 
@@ -44,20 +46,26 @@ h1{
 input{
   align-items: center;
   text-align: center;
-  margin: 2%;
   background-color: #b2ebf2;
- 
+ width: 30vw;
+ height: 8vh;
 }
 
 button{
   margin: 2%;
   align-items: center;
-  background-color: #ee6f57;
+  background-color: #ffbb91;
   color: #00416D;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .clearButton{
   margin: 2%;
   align-items: center;
   margin-left: 25%;
+}
+
+p{
+  font-size: 1.3rem;
 }
