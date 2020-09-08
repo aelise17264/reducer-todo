@@ -1,28 +1,63 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  background: url(https://i.pinimg.com/originals/6a/a4/e4/6aa4e4f24c40d1db81a41b5e09cbe664.jpg);
+background-position: center;
+padding-left: 5%;
+font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-i {
-  font-size: 12px;
+.App{
+  align-content: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+
 }
 
-input {
-  padding: 6px;
-  background: grey;
-  border: none;
+
+.todo-card-completed {
+  color: black;
+ text-decoration: line-through;
+}
+
+.todo-list{
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+  overflow-wrap: break-word;
+  width: 15vw;
+
+}
+
+h1{
+  align-items: center;
+  font-size: 2.5rem;
+  
+}
+.todo-form{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+
+}
+
+input{
+  align-items: center;
+  text-align: center;
+  margin: 2%;
+  background-color: #b2ebf2;
  
-  margin-top: 0;
-  margin-right: 8px;
 }
-form{
-  border: solid black 2px;
+
+button{
+  margin: 2%;
+  align-items: center;
+  background-color: #ee6f57;
+  color: #00416D;
+}
+
+.clearButton{
+  margin: 2%;
+  align-items: center;
+  margin-left: 25%;
 }

@@ -6,7 +6,7 @@ const ToDoList = (props)=> {
 const {todos} = props.state
 // console.log(`item${props.item.completed ? "completed" : ""}`)
         return (
-          <div>
+          <div className='todo-list'>
             {
               todos.map(todo => {
                 return <CardMaker

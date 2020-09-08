@@ -24,15 +24,18 @@ const handleRemove = event => {
 }
 
      return(
-         <div>
+         <div className='todo-form'>
              <form onSubmit={onSubmit}>
                  <label>Add a New Todo:</label>
+                 <br/>
                  <input
                 onChange = {handleChanges}
                 name='newTodo'
                 type='text'
                 />
+                <br/>
                 <button type='submit'>Submit</button>
+                <p>Did you cross off some of your to-dos? Clear what you've finished from the list</p>
                 <button onClick={handleRemove}>Clear Completed</button>
              </form>
          </div>
