@@ -1,6 +1,5 @@
-import { TOGGLE_ADD, SET_ADD} from '../Actions/ToDoActions';
 
-const todoData =[
+export const todoData =[
     {
       task: 'Organize Garage',
       id: 1528817077286,
@@ -8,19 +7,20 @@ const todoData =[
     }
 ]
 
-export const ToDoReducer = (state = todoData, action) => {
-    console.log(action.type)
+export const reducer = (state, action) => {
+    // console.log(action.type)
+    // console.log(action.payload)
     switch(action.type){
-        case TOGGLE_ADD:
+        case 'TOGGLE_ADD':
             return{
                 ...state,
-                editing: !state.editing
+                completed: !state.completed
             };
-        case SET_ADD:
+        case 'SET_ADD':
             return{
                 ...state,
-                title: action.payload,
-                editing: false
+                task: action.payload,
+                completed: false
             };
         default:
             return state;
