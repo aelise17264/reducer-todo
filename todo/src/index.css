@@ -1,0 +1,71 @@
+body{
+  background: url(https://s7d2.scene7.com/is/image/PetSmart/5269046);
+background-position: center;
+padding-left: 5%;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.App{
+  align-content: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+color: #1a1a2e;
+font-weight: bold;
+
+}
+
+
+.todo-card-completed {
+  color: black;
+ text-decoration: line-through;
+}
+
+.todo-list{
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+  overflow-wrap: break-word;
+  width: 15vw;
+
+}
+
+h1{
+  align-items: center;
+  font-size: 2.5rem;
+  
+}
+.todo-form{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+
+}
+
+input{
+  align-items: center;
+  text-align: center;
+  background-color: #b2ebf2;
+ width: 30vw;
+ height: 8vh;
+}
+
+button{
+  margin: 2%;
+  align-items: center;
+  background-color: #ffbb91;
+  color: #00416D;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.clearButton{
+  margin: 2%;
+  align-items: center;
+  margin-left: 25%;
+}
+
+p{
+  font-size: 1.3rem;
+}
