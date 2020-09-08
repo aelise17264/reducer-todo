@@ -4,25 +4,25 @@ import ReactDOM from 'react-dom';
 //  import { Provider } from 'react-redux';
 // import logger from 'redux-logger';
 import './App.css';
-import Form from './ToDoForm'
+import ToDoForm from './ToDoForm'
 
 
 
 export default function App(){
 
   return(
-    <>
-    <div>
+    
+    <div className ='App'>
       <header><h1>To Do List</h1></header>
-      <Form/>
+       <ToDoForm/> 
       
     </div>
-    </>
+    
   )
 }
 
-// const rootElement = document.getElementById('root');
-// ReactDOM.render(
-//     <App />,
-//   rootElement
-// );
+const rootElement = document.getElementById('root');
+ReactDOM.render(
+    <App />,
+  rootElement
+);

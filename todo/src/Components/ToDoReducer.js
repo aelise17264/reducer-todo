@@ -2,7 +2,7 @@
 export const todoData =[
     {
       task: 'Organize Garage',
-      id: 1528817077286,
+      id: Math.random(),
       completed: false
     }
 ]
@@ -14,13 +14,15 @@ export const reducer = (state, action) => {
         case 'TOGGLE_ADD':
             return{
                 ...state,
-                completed: !state.completed
+                task: action.payload,
+                id: Math.random(),
+                completed: false
+               
             };
         case 'SET_ADD':
             return{
                 ...state,
-                task: action.payload,
-                completed: false
+                completed: !state.completed
             };
         default:
             return state;
