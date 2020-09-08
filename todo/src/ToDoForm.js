@@ -1,46 +1,34 @@
 import React, {useState, useReducer} from 'react';
 import {connect} from 'react-redux';
 import {todoData, reducer} from './Components/ToDoReducer'
-import List from './ToDoList'
-import Todo from './Todo';
+
+
 
 const TodoForm = () => {
     const [newItem, setNewItem] = useState('')
     const [state, dispatch] = useReducer(reducer, todoData)
-console.log(state[0].task)
 
 const handleChanges = event => {
     setNewItem(event.target.value)
 }
-
-const toggleList = (addedItem) => {
-  state.map((item) => {
-        if(item.id === addedItem){
-          return{
-            ...item,
-            completed: !item.completed
-          };
-        }else{
-          return item
-        }
-      })
-    
-  }
 
      return(
          <>
          <h2>Don't Forget To Do:</h2>
               <div>  
              {!state.editing?(
-                <h2>{state.task}{''}
-                <i 
+                 <h2>
+                {state.task}{''}
+                
+                <button 
                 onClick = {() => 
                     dispatch({type: 'SET_ADD'})
                 }
-               />
+               >Add Item</button>
                  </h2>
              ) : (
                 <div>
+                    <h3>Add to your list:</h3>
                <input 
               placeholder='add todo'
                className='todo-item'
@@ -61,8 +49,9 @@ const toggleList = (addedItem) => {
            </div> 
            )}
     <div className='list'>
-        {state.map((item, index) => {
-           return <p>Write These Down: {state[index].item}</p> 
+        {state.map((item) => {
+            console.log(item.task)
+           return <p>Write These Down: 📌{item.task}</p> 
             
         })}
     </div>
