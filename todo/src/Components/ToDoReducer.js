@@ -1,11 +1,13 @@
 
-export const todoData =[
+export const initialState ={
+   todos: [
     {
       task: 'Organize Garage',
       id: Math.random(),
       completed: false
     }
 ]
+}
 
 export const reducer = (state, action) => {
     // console.log(action.type)
@@ -14,17 +16,19 @@ export const reducer = (state, action) => {
         case 'TOGGLE_COMPLETED': 
         return {
             ...state, 
-            task: state.task.map(task => task.id === action.payload ? {...task, completed: !task.completed} : task) 
+            todos: state.todos.map(todo => 
+                todo.id === action.payload ? 
+                {...todo, completed: !todo.completed} : todo) 
         }
         case 'ADD_TODO': 
         return {
             ...state, 
-            task: [...state.task, action.payload]
+            todos: [...state.todos, action.payload]
         }
         case 'REMOVE_TODO': 
         return {
             ...state,
-            task: state.task.filter(task => !task.completed)
+            todos: state.todos.filter(todo => !todo.completed)
         }
         default: 
         return state; 

@@ -5,12 +5,12 @@ import ReactDOM from 'react-dom';
 // import logger from 'redux-logger';
 import './App.css';
 import ToDoForm from './ToDoForm'
-import {todoData, reducer} from './Components/ToDoReducer'
+import {initialState, reducer} from './Components/ToDoReducer'
 import ToDoList from './TodoList'
 
 
 export default function App(){
-const [state, dispatch] = useReducer (todoData, reducer)
+const [state, dispatch] = useReducer (reducer, initialState)
   return(
     
     <div className ='App'>

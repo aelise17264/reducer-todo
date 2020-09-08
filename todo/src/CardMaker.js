@@ -1,11 +1,11 @@
 import React from 'react'
 
-const CardMaker = ({item, dispatch}) =>{
+const CardMaker = ({todo, dispatch}) =>{
 
 return(
-    <div onClick = {() => {dispatch({type: 'TOGGLE_COMPLETED', payload: item.id})}}
-    className={!item.completed ? 'todo-card' : 'todo-card completed'}>
-        <p>{item.task}</p>
+    <div onClick = {() => {dispatch({type: 'TOGGLE_COMPLETED', payload: todo.id})}}
+    className={!todo.completed ? 'todo-card' : 'todo-card completed'}>
+        <p>{todo.task}</p>
     </div>
 )
 
