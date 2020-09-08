@@ -1,20 +1,26 @@
-import React from 'react';
+import React, {useReducer} from 'react';
 import ReactDOM from 'react-dom';
 // import { createStore, applyMiddleware } from 'redux';
 //  import { Provider } from 'react-redux';
 // import logger from 'redux-logger';
 import './App.css';
 import ToDoForm from './ToDoForm'
-
+import {todoData, reducer} from './Components/ToDoReducer'
+import ToDoList from './TodoList'
 
 
 export default function App(){
-
+const [state, dispatch] = useReducer (todoData, reducer)
   return(
     
     <div className ='App'>
       <header><h1>To Do List</h1></header>
-       <ToDoForm/> 
+       <ToDoForm
+       dispatch = {dispatch}/>
+       <ToDoList
+       state={state} 
+       dispatch={dispatch}
+       />
       
     </div>
     

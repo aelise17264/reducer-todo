@@ -1,63 +1,41 @@
-import React, {useState, useReducer} from 'react';
-import {connect} from 'react-redux';
-import {todoData, reducer} from './Components/ToDoReducer'
+import React, {useState} from 'react';
 
 
-
-const TodoForm = () => {
+const TodoForm = ({dispatch}) => {
     const [newItem, setNewItem] = useState('')
-    const [state, dispatch] = useReducer(reducer, todoData)
 
 const handleChanges = event => {
-    setNewItem(event.target.value)
+setNewItem(event.target.value)
+}
+
+const onSubmit = event => {
+    event.preventDefault()
+    const newTodo = {
+        task: newItem,
+        complete: false,
+        id: Math.random()
+    }
+    dispatch({type: 'ADD_TODO', payload: newTodo})
+}
+
+const handleRemove = event => {
+    event.preventDefault()
+    dispatch({type: 'REMOVE_TODO'})
 }
 
      return(
-         <>
-         <h2>Don't Forget To Do:</h2>
-              <div>  
-             {!state.editing?(
-                 <h2>
-                {state.task}{''}
-                
-                <button 
-                onClick = {() => 
-                    dispatch({type: 'SET_ADD'})
-                }
-               >Add Item</button>
-                 </h2>
-             ) : (
-                <div>
-                    <h3>Add to your list:</h3>
-               <input 
-              placeholder='add todo'
-               className='todo-item'
-               type='text'
-               name='newItem'
-               value={newItem}
-               onChange = {handleChanges}
-
-               />
-               
-               <button onClick={() => 
-                   dispatch({ type: 'TOGGLE_ADD', payload: newItem})
-               }
-               >
-                  Add To Do Item
-              </button>  
-             
-           </div> 
-           )}
-    <div className='list'>
-        {state.map((item) => {
-            console.log(item.task)
-           return <p>Write These Down: 📌{item.task}</p> 
-            
-        })}
-    </div>
-    
-      </div>
-     </>
+         <div>
+             <form onSubmit={onSubmit}>
+                 <label>Add a New Todo:</label>
+                 <input
+                onChange = {handleChanges}
+                name='newTodo'
+                type='text'
+                />
+                <button type='submit'>Submit</button>
+                <button onClick={handleRemove}>Clear Completed</button>
+             </form>
+         </div>
      );
 };
 export default TodoForm
